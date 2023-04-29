@@ -10,6 +10,19 @@
         private int correctIndex;
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="Question"/> class.
+        /// </summary>
+        /// <param name="quest">String containing question text.</param>
+        /// <param name="ans">Array of strings containing answer text.</param>
+        /// <param name="ind">Integer index of correct answer in Answer text array.</param>
+        public Question(string quest, string[] ans, int ind)
+        {
+            this.questionText = quest;
+            this.correctIndex = ind;
+            Array.Copy(ans, this.answersText, 4);
+        }
+
+        /// <summary>
         /// Gets the correct index for the questions answer.
         /// </summary>
         public int CorrectIndex
