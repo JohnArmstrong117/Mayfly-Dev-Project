@@ -55,5 +55,33 @@ namespace Mayfly_LogicEngine
         {
             get { return this.questions; }
         }
+
+        /// <summary>
+        /// Adds a question to the quiz.
+        /// </summary>
+        /// <param name="question">Question object to be added.</param>
+        public void AddQuestion(Question question)
+        {
+            this.questions.Add(question);
+        }
+
+        /// <summary>
+        /// Removes the question at the given index in the list.
+        /// </summary>
+        /// <param name="questionIndex">Index of question to remove.</param>
+        public void RemoveQuestion(int questionIndex)
+        {
+            this.questions.Remove(this.questions[questionIndex]);
+        }
+
+        /// <summary>
+        /// Gets the number of correct questions answerd by student.
+        /// </summary>
+        /// <param name="user">Student to be checked.</param>
+        /// <returns>Number of correct answers.</returns>
+        public int GetStudentCorrectNumber(User user)
+        {
+            return this.studentCorrectNumbers[user];
+        }
     }
 }
