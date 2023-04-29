@@ -75,10 +75,10 @@ namespace Mayfly_LogicEngine
         }
 
         /// <summary>
-        /// Gets the number of correct questions answerd by student.
+        /// Gets the number of correct answers from the given student.
         /// </summary>
-        /// <param name="user">Student to be checked.</param>
-        /// <returns>Number of correct answers.</returns>
+        /// <param name="user">student to check number of correct responses.</param>
+        /// <returns>returns number of students correct answers.</returns>
         public int GetStudentCorrectNumber(User user)
         {
             return this.studentCorrectNumbers[user];
