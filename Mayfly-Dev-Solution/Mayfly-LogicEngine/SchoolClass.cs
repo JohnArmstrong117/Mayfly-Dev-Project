@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +16,19 @@ namespace Mayfly_LogicEngine
         private string name;
         private List<User> students;
         private User teacher;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchoolClass"/> class.
+        /// </summary>
+        /// <param name="className">String containing name of new SchoolClass.</param>
+        /// <param name="classTeacher">User object instance of the class teacher.</param>
+        public SchoolClass(string className, User classTeacher)
+        {
+            this.name = className;
+            this.teacher = classTeacher;
+            this.quizList = new List<Quiz>();
+            this.students = new List<User>();
+        }
 
         /// <summary>
         /// Gets or Sets this Class' active teacher.
