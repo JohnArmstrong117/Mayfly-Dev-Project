@@ -46,5 +46,15 @@
             get { return this.questionText; }
             set { this.questionText = value; }
         }
+
+        /// <summary>
+        /// Checks to see if the answered index is the correct index.
+        /// </summary>
+        /// <param name="answedIndex">Index number of the answer selected.</param>
+        /// <returns>True if answered index is correct index.</returns>
+        public bool IsCorrectAnswer(int answedIndex)
+        {
+            return this.correctIndex == answedIndex;
+        }
     }
 }
