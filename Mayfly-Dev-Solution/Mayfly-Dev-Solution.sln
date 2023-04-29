@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayfly-UI", "Mayfly-UI\Mayf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayfly-LogicEngine", "Mayfly-LogicEngine\Mayfly-LogicEngine.csproj", "{63675A2D-19CC-4237-AFE1-923FB3BC46ED}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E33A11F4-EEC5-44C3-BDC7-DFEAAB124571}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
