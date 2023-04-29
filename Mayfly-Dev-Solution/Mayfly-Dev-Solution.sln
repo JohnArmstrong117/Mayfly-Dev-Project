@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayfly-UI", "Mayfly-UI\Mayfly-UI.csproj", "{B720B3D8-2164-46FC-94D8-27EB94E86435}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mayfly-UI", "Mayfly-UI\Mayfly-UI.csproj", "{B720B3D8-2164-46FC-94D8-27EB94E86435}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mayfly-LogicEngine", "Mayfly-LogicEngine\Mayfly-LogicEngine.csproj", "{63675A2D-19CC-4237-AFE1-923FB3BC46ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B720B3D8-2164-46FC-94D8-27EB94E86435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B720B3D8-2164-46FC-94D8-27EB94E86435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B720B3D8-2164-46FC-94D8-27EB94E86435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63675A2D-19CC-4237-AFE1-923FB3BC46ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63675A2D-19CC-4237-AFE1-923FB3BC46ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63675A2D-19CC-4237-AFE1-923FB3BC46ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63675A2D-19CC-4237-AFE1-923FB3BC46ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
