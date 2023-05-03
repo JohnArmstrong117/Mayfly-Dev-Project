@@ -16,5 +16,20 @@ namespace Mayfly_UI
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            LogInPage lip = new LogInPage();
+            if (parForm != null)
+            {
+                parForm.SwitchUserControl(lip);
+            }
+        }
     }
 }
