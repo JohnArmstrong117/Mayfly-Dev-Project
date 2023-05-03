@@ -66,6 +66,7 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Student";
             radioButton1.UseVisualStyleBackColor = false;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -78,6 +79,7 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Teacher";
             radioButton2.UseVisualStyleBackColor = false;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // label2
             // 
@@ -98,6 +100,7 @@
             groupBox1.Size = new Size(200, 58);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // label3
             // 
@@ -162,6 +165,7 @@
             button1.TabIndex = 11;
             button1.Text = "SignUp";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // SignUpPage
             // 
