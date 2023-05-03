@@ -29,5 +29,13 @@ namespace Mayfly_LogicEngine
             this.password = newPass;
             this.userID = newUID;
         }
+
+        /// <summary>
+        /// Gets UserId.
+        /// </summary>
+        public string UserID
+        {
+            get { return this.userID; }
+        }
     }
 }
