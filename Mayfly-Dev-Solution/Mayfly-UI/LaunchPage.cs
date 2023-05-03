@@ -31,5 +31,15 @@ namespace Mayfly_UI
                 parForm.SwitchUserControl(lip);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            SignUpPage sp = new SignUpPage();
+            if (parForm != null)
+            {
+                parForm.SwitchUserControl(sp);
+            }
+        }
     }
 }

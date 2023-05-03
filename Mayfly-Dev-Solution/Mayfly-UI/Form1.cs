@@ -23,6 +23,13 @@ namespace Mayfly_UI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            foreach (Control c in this.Controls)
+            {
+                c.Enabled = true;
+                c.Visible = false;
+                c.Dock = DockStyle.Fill;
+            }
+
             LaunchPage lp = new LaunchPage();
             this.Controls.Add(lp);
             lp.Enabled = true;
