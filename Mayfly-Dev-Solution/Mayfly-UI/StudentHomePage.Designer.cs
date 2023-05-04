@@ -30,9 +30,9 @@
         {
             label1 = new Label();
             label2 = new Label();
-            usernameLabel = new Label();
             viewClassesButton = new Button();
             signOutButton = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -58,21 +58,11 @@
             label2.TabIndex = 1;
             label2.Text = "Student";
             // 
-            // usernameLabel
-            // 
-            usernameLabel.AutoSize = true;
-            usernameLabel.Font = new Font("Stencil", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            usernameLabel.Location = new Point(235, 127);
-            usernameLabel.Name = "usernameLabel";
-            usernameLabel.Size = new Size(80, 24);
-            usernameLabel.TabIndex = 2;
-            usernameLabel.Text = "label3";
-            // 
             // viewClassesButton
             // 
             viewClassesButton.BackColor = Color.FromArgb(192, 255, 192);
             viewClassesButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            viewClassesButton.Location = new Point(235, 169);
+            viewClassesButton.Location = new Point(235, 215);
             viewClassesButton.Name = "viewClassesButton";
             viewClassesButton.Size = new Size(112, 68);
             viewClassesButton.TabIndex = 3;
@@ -84,7 +74,7 @@
             // 
             signOutButton.BackColor = Color.FromArgb(255, 128, 128);
             signOutButton.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            signOutButton.Location = new Point(237, 262);
+            signOutButton.Location = new Point(237, 299);
             signOutButton.Name = "signOutButton";
             signOutButton.Size = new Size(110, 57);
             signOutButton.TabIndex = 4;
@@ -92,14 +82,25 @@
             signOutButton.UseVisualStyleBackColor = false;
             signOutButton.Click += signOutButton_Click;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(255, 128, 255);
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(235, 121);
+            button1.Name = "button1";
+            button1.Size = new Size(112, 78);
+            button1.TabIndex = 5;
+            button1.Text = "View Account";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // StudentHomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
+            Controls.Add(button1);
             Controls.Add(signOutButton);
             Controls.Add(viewClassesButton);
-            Controls.Add(usernameLabel);
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "StudentHomePage";
@@ -113,8 +114,8 @@
 
         private Label label1;
         private Label label2;
-        private Label usernameLabel;
         private Button viewClassesButton;
         private Button signOutButton;
+        private Button button1;
     }
 }

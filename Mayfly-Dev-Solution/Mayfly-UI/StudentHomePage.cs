@@ -19,7 +19,6 @@ namespace Mayfly_UI
 
         private void StudentHomePage_Load(object sender, EventArgs e)
         {
-            // TODO: Set usernameLabel to active users name.
         }
 
         private void viewClassesButton_Click(object sender, EventArgs e)
