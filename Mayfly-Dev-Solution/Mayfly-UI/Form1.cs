@@ -1,10 +1,24 @@
 namespace Mayfly_UI
 {
+    using Mayfly_LogicEngine;
+
     public partial class Form1 : Form
     {
+        private MayFlyAppManager appManager;
+
         public Form1()
         {
             InitializeComponent();
+            this.AppManager = new MayFlyAppManager();
+        }
+
+        /// <summary>
+        /// Gets or Sets AppManager.
+        /// </summary>
+        public MayFlyAppManager AppManager
+        {
+            get { return this.appManager; }
+            set {this.appManager = value; }
         }
 
         /// <summary>
