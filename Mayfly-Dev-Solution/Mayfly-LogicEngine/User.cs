@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Mayfly_LogicEngine
 {
     /// <summary>
     /// Abstract class base for student and teacher users.
     /// </summary>
+    [Serializable]
+    [XmlInclude(typeof(Student))]
+    [XmlInclude(typeof(Teacher))]
     internal abstract class User
     {
         protected string name;
