@@ -9,7 +9,7 @@ namespace Mayfly_LogicEngine
     /// <summary>
     /// Class designed to store quiz data.
     /// </summary>
-    internal class Quiz
+    public class Quiz
     {
         private List<Question> questions;
         private string quizName;

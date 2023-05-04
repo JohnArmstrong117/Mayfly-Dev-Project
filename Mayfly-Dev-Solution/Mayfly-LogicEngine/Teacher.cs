@@ -10,7 +10,7 @@ namespace Mayfly_LogicEngine
     /// Class designed to hold data for teachers.
     /// </summary>
     [Serializable]
-    internal class Teacher : User
+    public class Teacher : User
     {
         private List<SchoolClass> schoolClasses;
 

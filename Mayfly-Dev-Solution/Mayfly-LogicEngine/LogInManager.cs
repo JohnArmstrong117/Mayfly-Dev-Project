@@ -11,7 +11,7 @@ namespace Mayfly_LogicEngine
     /// <summary>
     /// Class to manage Mayfly user login and signup.
     /// </summary>
-    internal class LogInManager
+    public class LogInManager
     {
         private List<User> allUsers;
         private XmlSerializer xmlSerializer;

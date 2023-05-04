@@ -10,7 +10,7 @@ namespace Mayfly_LogicEngine
     /// <summary>
     /// class designed to store data for SchoolClasses.
     /// </summary>
-    internal class SchoolClass
+    public class SchoolClass
     {
         private List<Quiz> quizList;
         private string name;

@@ -13,7 +13,7 @@ namespace Mayfly_LogicEngine
     [Serializable]
     [XmlInclude(typeof(Student))]
     [XmlInclude(typeof(Teacher))]
-    internal abstract class User
+    public abstract class User
     {
         protected string name;
 
