@@ -13,28 +13,24 @@ namespace Mayfly_LogicEngine
     {
         private List<Question> questions;
         private string quizName;
-        private Dictionary<User, int> studentCorrectNumbers;
+        private List<KeyValuePair<User, int>> studentCorrectNumbers;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Quiz"/> class.
         /// </summary>
         /// <param name="name">String containing the name for the quiz.</param>
         /// <param name="studentList">List of students whome should take this quiz.</param>
-        public Quiz(string name, List<User> studentList)
+        public Quiz()
         {
             this.questions = new List<Question>();
-            this.quizName = name;
-            this.studentCorrectNumbers = new Dictionary<User, int>();
-            foreach (User user in studentList)
-            {
-                this.studentCorrectNumbers[user] = 0;
-            }
+            this.quizName = string.Empty;
+            this.studentCorrectNumbers = new List<KeyValuePair<User, int>>();
         }
 
         /// <summary>
         /// Gets a dictionary of Users as Keys and Ints representing the number of correct answers the user recieved.
         /// </summary>
-        public Dictionary<User, int> StudentCorrectNumbers
+        public List<KeyValuePair<User, int>> StudentCorrectNumbers
         {
             get { return this.studentCorrectNumbers; }
         }
@@ -81,7 +77,7 @@ namespace Mayfly_LogicEngine
         /// <returns>returns number of students correct answers.</returns>
         public int GetStudentCorrectNumber(User user)
         {
-            return this.studentCorrectNumbers[user];
+            return this.studentCorrectNumbers.FirstOrDefault(pair => pair.Key == user).Value;
         }
     }
 }

@@ -15,27 +15,28 @@
         /// <param name="quest">String containing question text.</param>
         /// <param name="ans">Array (length 4) of strings containing answer text.</param>
         /// <param name="ind">Integer index of correct answer in Answer text array.</param>
-        public Question(string quest, string[] ans, int ind)
+        public Question()
         {
-            this.questionText = quest;
-            this.correctIndex = ind;
-            Array.Copy(ans, this.answersText, 4);
+            this.questionText = string.Empty;
+            this.correctIndex = -1;
         }
 
         /// <summary>
-        /// Gets the correct index for the questions answer.
+        /// Gets or Sets the correct index for the questions answer.
         /// </summary>
         public int CorrectIndex
         {
             get { return this.correctIndex; }
+            set { this.correctIndex = value; }
         }
 
         /// <summary>
-        /// Gets an array of strings containing the answers to the question.
+        /// Gets or Sets an array of strings containing the answers to the question.
         /// </summary>
         public string[] AnswerText
         {
             get { return this.answersText; }
+            set { this.answersText = value; }
         }
 
         /// <summary>

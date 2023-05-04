@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Xml.Serialization;
+using System.Xml;
 
 namespace Mayfly_LogicEngine
 {
@@ -22,7 +23,17 @@ namespace Mayfly_LogicEngine
         public LogInManager()
         {
             this.allUsers = new List<User>();
-            this.xmlSerializer = new XmlSerializer(typeof(List<User>));
+            this.xmlSerializer = new XmlSerializer(typeof(List<User>), new XmlRootAttribute("root"));
+            string filePath = "users.xml";
+
+            if (!File.Exists(filePath))
+            {
+                // Create a new XML document with a root element
+                XmlDocument xmlDocument = new XmlDocument();
+                XmlElement rootElement = xmlDocument.CreateElement("root");
+                xmlDocument.AppendChild(rootElement);
+                xmlDocument.Save(filePath);
+            }
         }
 
         public void AddUser(User user)
@@ -67,9 +78,12 @@ namespace Mayfly_LogicEngine
 
         public void LoadUsers()
         {
-            StreamReader sr = new StreamReader("users.xml");
-            this.allUsers = (List<User>)this.xmlSerializer.Deserialize(sr);
-            sr.Close();
+            if (File.Exists("users.xml") && new FileInfo("users.xml").Length > 0)
+            {
+                StreamReader sr = new StreamReader("users.xml");
+                this.allUsers = (List<User>)this.xmlSerializer.Deserialize(sr);
+                sr.Close();
+            }
         }
 
         public void SaveUsers()

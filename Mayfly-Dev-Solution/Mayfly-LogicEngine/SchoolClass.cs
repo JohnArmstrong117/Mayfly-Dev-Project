@@ -22,10 +22,10 @@ namespace Mayfly_LogicEngine
         /// </summary>
         /// <param name="className">String containing name of new SchoolClass.</param>
         /// <param name="classTeacher">User object instance of the class teacher.</param>
-        public SchoolClass(string className, User classTeacher)
+        public SchoolClass()
         {
-            this.name = className;
-            this.teacher = classTeacher;
+            this.name = string.Empty;
+            this.teacher = new Teacher();
             this.quizList = new List<Quiz>();
             this.students = new List<User>();
         }
