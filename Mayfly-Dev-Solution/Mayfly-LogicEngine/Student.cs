@@ -17,13 +17,10 @@ namespace Mayfly_LogicEngine
         /// <summary>
         /// Initializes a new instance of the <see cref="Student"/> class.
         /// </summary>
-        /// <param name="newName"></param>
-        /// <param name="newPass"></param>
-        /// <param name="newUID"></param>
-        public Student(string newName, string newPass, string newUID)
-            : base(newName, newPass, newUID)
+        public Student()
+            : base()
         {
-            // TODO: IMplement constructor.
+            this.classes = new List<SchoolClass>();
         }
 
         /// <summary>

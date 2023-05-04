@@ -24,22 +24,38 @@ namespace Mayfly_LogicEngine
         /// <summary>
         /// Initializes a new instance of the <see cref="User"/> class.
         /// </summary>
-        /// <param name="newName">string name of user.</param>
-        /// <param name="newPass">string password.</param>
-        /// <param name="newUID">string userID.</param>
-        public User(string newName, string newPass, string newUID)
+        public User()
         {
-            this.name = newName;
-            this.password = newPass;
-            this.userID = newUID;
+            this.name = string.Empty;
+            this.password = string.Empty;
+            this.userID = string.Empty;
         }
 
         /// <summary>
-        /// Gets UserId.
+        /// Gets or Sets UserId.
         /// </summary>
         public string UserID
         {
             get { return this.userID; }
+            set { this.userID = value; }
+        }
+
+        /// <summary>
+        /// Gets or Sets Password.
+        /// </summary>
+        public string Password
+        {
+            get { return this.password; }
+            set { this.password = value; }
+        }
+
+        /// <summary>
+        /// Gets or Sets Name.
+        /// </summary>
+        public string Name
+        {
+            get { return this.name; }
+            set{ this.name = value; }
         }
     }
 }
