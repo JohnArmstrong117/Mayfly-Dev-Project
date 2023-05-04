@@ -14,6 +14,7 @@ namespace Mayfly_LogicEngine
     internal class LogInManager
     {
         private List<User> allUsers;
+        private XmlSerializer xmlSerializer;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogInManager"/> class.
@@ -21,11 +22,22 @@ namespace Mayfly_LogicEngine
         public LogInManager()
         {
             this.allUsers = new List<User>();
+            this.xmlSerializer = new XmlSerializer(typeof(List<User>));
         }
 
         public void AddUser(User user)
         {
             this.allUsers.Add(user);
+        }
+
+        public void AddStudentUser(string username, string password)
+        {
+            this.allUsers.Add(new Student(username, password, username));
+        }
+
+        public void AddTeacherUser(string username, string password)
+        {
+            this.allUsers.Add(new Teacher(username, password, username));
         }
 
         public void RemoveUser(User user)
@@ -35,12 +47,16 @@ namespace Mayfly_LogicEngine
 
         public void LoadUsers()
         {
-            // TODO: deserialize list of user objects.
+            StreamReader sr = new StreamReader("users.xml");
+            this.allUsers = (List<User>)this.xmlSerializer.Deserialize(sr);
+            sr.Close();
         }
 
         public void SaveUsers()
         {
-            // TODO: serialize list of user objects.
+            StreamWriter sw = new StreamWriter("users.xml");
+            this.xmlSerializer.Serialize(sw, this.allUsers);
+            sw.Close();
         }
 
         /// <summary>
