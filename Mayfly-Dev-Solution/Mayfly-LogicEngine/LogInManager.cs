@@ -111,5 +111,24 @@ namespace Mayfly_LogicEngine
 
             return false;
         }
+
+        /// <summary>
+        /// Gets a user in the database by username.
+        /// </summary>
+        /// <param name="username">Username od user to find.</param>
+        /// <returns>Returns the User if found. returns null if not.</returns>
+        public User getUserByUsername(string username)
+        {
+            this.LoadUsers();
+            foreach (User current in this.allUsers)
+            {
+                if (current.UserID == username)
+                {
+                    return current;
+                }
+            }
+
+            return null;
+        }
     }
 }
