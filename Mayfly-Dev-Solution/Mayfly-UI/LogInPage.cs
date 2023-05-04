@@ -56,6 +56,8 @@ namespace Mayfly_UI
                         {
                             // TODO: LOGIN to student ui with user
                             this.parForm.AppManager.ActiveUser = foundUser;
+                            StudentHomePage studentHomePage = new StudentHomePage();
+                            this.parForm.SwitchUserControl(studentHomePage);
                             MessageBox.Show("Success Student Logged In.");
                         }
                     }
