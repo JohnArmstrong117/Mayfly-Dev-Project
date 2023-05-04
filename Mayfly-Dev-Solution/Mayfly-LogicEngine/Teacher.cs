@@ -28,7 +28,7 @@ namespace Mayfly_LogicEngine
         /// </summary>
         public List<SchoolClass> SchoolClasses
         {
-            get { return this.SchoolClasses; }
+            get { return this.schoolClasses; }
         }
     }
 }
