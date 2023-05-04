@@ -184,6 +184,7 @@
             Controls.Add(label1);
             Name = "SignUpPage";
             Size = new Size(666, 372);
+            Load += SignUpPage_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

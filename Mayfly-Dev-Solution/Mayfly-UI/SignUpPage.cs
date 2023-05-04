@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mayfly_LogicEngine;
 
 namespace Mayfly_UI
 {
     public partial class SignUpPage : UserControl
     {
+        private LogInManager logInManager;
+
         public SignUpPage()
         {
             InitializeComponent();
             this.button1.Enabled = false;
+            this.logInManager = new LogInManager();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -25,7 +29,7 @@ namespace Mayfly_UI
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.radioButton1.Checked || this.radioButton2.Checked )
+            if (this.radioButton1.Checked || this.radioButton2.Checked)
             {
                 this.button1.Enabled = true;
             }
@@ -55,7 +59,33 @@ namespace Mayfly_UI
                 return;
             }
 
-            // Todo: add student or teacher user if passwords match.
+            if (this.textBox2.Text != this.textBox3.Text)
+            {
+                MessageBox.Show("Passwords do not match");
+                return;
+            }
+
+            if (this.radioButton1.Checked)
+            {
+                string username = this.textBox1.Text;
+                string password = this.textBox2.Text;
+                this.logInManager.AddStudentUser(username, password);
+
+                // TODO: Load Student UI Page.
+            }
+            else if (this.radioButton2.Checked)
+            {
+                string username = this.textBox1.Text;
+                string password = this.textBox2.Text;
+                this.logInManager.AddTeacherUser(username, password);
+
+                // TODO: Load Teacher UI page.
+            }
+        }
+
+        private void SignUpPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
