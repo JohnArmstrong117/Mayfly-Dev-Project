@@ -35,6 +35,15 @@ namespace Mayfly_UI
             this.ActiveControl = newControll;
         }
 
+        /// <summary>
+        /// Sets the active user.
+        /// </summary>
+        /// <param name="newActive">User to set as active.</param>
+        public void SetActiveUser(User newActive)
+        {
+            this.appManager.ActiveUser = newActive;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             foreach (Control c in this.Controls)

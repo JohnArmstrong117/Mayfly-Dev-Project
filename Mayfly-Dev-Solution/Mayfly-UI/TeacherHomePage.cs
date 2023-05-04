@@ -21,5 +21,15 @@ namespace Mayfly_UI
         {
 
         }
+
+        private void viewClassesButton_Click(object sender, EventArgs e)
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                TeacherViewClasses tvc = new TeacherViewClasses();
+                parForm.SwitchUserControl(tvc);
+            }
+        }
     }
 }

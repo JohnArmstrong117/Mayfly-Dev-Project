@@ -50,9 +50,9 @@ namespace Mayfly_UI
                             Form1? parForm = this.ParentForm as Form1;
                             if (parForm != null)
                             {
-                                parForm.AppManager.ActiveUser = foundUser;
-
-                                // Switch controls here.
+                                parForm.SetActiveUser(foundUser);
+                                TeacherHomePage teacherHomePage = new TeacherHomePage();
+                                parForm.SwitchUserControl(teacherHomePage);
                             }
 
                             MessageBox.Show("Success Teacher Logged In.");
@@ -64,7 +64,7 @@ namespace Mayfly_UI
                             Form1? parForm = this.ParentForm as Form1;
                             if (parForm != null)
                             {
-                                parForm.AppManager.ActiveUser = foundUser;
+                                parForm.SetActiveUser(foundUser);
                                 StudentHomePage studentHomePage = new StudentHomePage();
                                 parForm.SwitchUserControl(studentHomePage);
                             }

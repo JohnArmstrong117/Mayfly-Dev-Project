@@ -80,6 +80,7 @@
             viewClassesButton.TabIndex = 3;
             viewClassesButton.Text = "View Classes";
             viewClassesButton.UseVisualStyleBackColor = false;
+            viewClassesButton.Click += viewClassesButton_Click;
             // 
             // signOutButton
             // 
