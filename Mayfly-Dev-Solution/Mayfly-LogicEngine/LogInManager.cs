@@ -27,17 +27,31 @@ namespace Mayfly_LogicEngine
 
         public void AddUser(User user)
         {
+            this.LoadUsers();
             this.allUsers.Add(user);
+            this.SaveUsers();
         }
 
+        /// <summary>
+        /// Use to add a student account to the user database.
+        /// </summary>
+        /// <param name="username">New username and userID.</param>
+        /// <param name="password">Password for new user.</param>
         public void AddStudentUser(string username, string password)
         {
-            this.allUsers.Add(new Student(username, password, username));
+            Student newStud = new Student(username, password, username);
+            this.AddUser(newStud);
         }
 
+        /// <summary>
+        /// Use to add a teacher account to the user database.
+        /// </summary>
+        /// <param name="username">New username and userID.</param>
+        /// <param name="password">Password for new user.</param>
         public void AddTeacherUser(string username, string password)
         {
-            this.allUsers.Add(new Teacher(username, password, username));
+            Teacher newTeach = new Teacher(username, password, username);
+            this.AddUser(newTeach);
         }
 
         public void RemoveUser(User user)

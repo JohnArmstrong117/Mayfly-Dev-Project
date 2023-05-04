@@ -20,7 +20,7 @@ namespace Mayfly_LogicEngine
         /// <param name="newName"></param>
         /// <param name="newPass"></param>
         /// <param name="newUID"></param>
-        public Student(string newName, string newPass, string newUID) 
+        public Student(string newName, string newPass, string newUID)
             : base(newName, newPass, newUID)
         {
             // TODO: IMplement constructor.
