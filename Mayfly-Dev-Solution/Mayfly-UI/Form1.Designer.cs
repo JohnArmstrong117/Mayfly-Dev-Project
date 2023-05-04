@@ -31,6 +31,7 @@
             logInPage1 = new LogInPage();
             launchPage1 = new LaunchPage();
             signUpPage1 = new SignUpPage();
+            studentHomePage1 = new StudentHomePage();
             SuspendLayout();
             // 
             // logInPage1
@@ -60,11 +61,20 @@
             signUpPage1.Size = new Size(800, 450);
             signUpPage1.TabIndex = 2;
             // 
+            // studentHomePage1
+            // 
+            studentHomePage1.BackColor = SystemColors.ControlDark;
+            studentHomePage1.Location = new Point(0, 0);
+            studentHomePage1.Name = "studentHomePage1";
+            studentHomePage1.Size = new Size(800, 450);
+            studentHomePage1.TabIndex = 3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(studentHomePage1);
             Controls.Add(signUpPage1);
             Controls.Add(launchPage1);
             Controls.Add(logInPage1);
@@ -79,5 +89,6 @@
         private LogInPage logInPage1;
         private LaunchPage launchPage1;
         private SignUpPage signUpPage1;
+        private StudentHomePage studentHomePage1;
     }
 }

@@ -18,7 +18,7 @@ namespace Mayfly_UI
         public MayFlyAppManager AppManager
         {
             get { return this.appManager; }
-            set {this.appManager = value; }
+            set { this.appManager = value; }
         }
 
         /// <summary>

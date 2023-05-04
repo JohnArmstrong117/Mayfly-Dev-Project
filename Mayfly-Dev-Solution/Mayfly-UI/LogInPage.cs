@@ -14,7 +14,6 @@ namespace Mayfly_UI
     public partial class LogInPage : UserControl
     {
         private LogInManager logInManager;
-        private Form1? parForm;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogInPage"/> class.
@@ -23,7 +22,6 @@ namespace Mayfly_UI
         {
             InitializeComponent();
             this.logInManager = new LogInManager();
-            this.parForm = this.ParentForm as Form1;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,19 +44,30 @@ namespace Mayfly_UI
                 {
                     if (password == foundUser.Password)
                     {
-                        if (foundUser is Teacher && this.parForm != null)
+                        if (foundUser is Teacher)
                         {
                             // TODO: LOGIn to teacher Ui with user
-                            this.parForm.AppManager.ActiveUser = foundUser;
+                            Form1? parForm = this.ParentForm as Form1;
+                            if (parForm != null)
+                            {
+                                parForm.AppManager.ActiveUser = foundUser;
+
+                                // Switch controls here.
+                            }
+
                             MessageBox.Show("Success Teacher Logged In.");
                         }
-                        else if (foundUser is Student && this.parForm != null)
+                        else if (foundUser is Student)
                         {
-                            // TODO: LOGIN to student ui with user
-                            this.parForm.AppManager.ActiveUser = foundUser;
-                            StudentHomePage studentHomePage = new StudentHomePage();
-                            this.parForm.SwitchUserControl(studentHomePage);
                             MessageBox.Show("Success Student Logged In.");
+                            // TODO: LOGIN to student ui with user
+                            Form1? parForm = this.ParentForm as Form1;
+                            if (parForm != null)
+                            {
+                                parForm.AppManager.ActiveUser = foundUser;
+                                StudentHomePage studentHomePage = new StudentHomePage();
+                                parForm.SwitchUserControl(studentHomePage);
+                            }
                         }
                     }
                     else
