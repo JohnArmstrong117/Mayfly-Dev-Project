@@ -43,10 +43,12 @@ namespace Mayfly_UI
                         if (foundUser is Teacher)
                         {
                             // TODO: LOGIn to teacher Ui with user
+                            MessageBox.Show("Success Teacher Logged In.");
                         }
                         else if (foundUser is Student)
                         {
                             // TODO: LOGIN to student ui with user
+                            MessageBox.Show("Success Student Logged In.");
                         }
                     }
                     else

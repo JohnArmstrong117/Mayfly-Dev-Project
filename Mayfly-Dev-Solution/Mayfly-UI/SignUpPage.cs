@@ -70,16 +70,20 @@ namespace Mayfly_UI
                 string username = this.textBox1.Text;
                 string password = this.textBox2.Text;
                 this.logInManager.AddStudentUser(username, password);
-
-                // TODO: Load Student UI Page.
             }
             else if (this.radioButton2.Checked)
             {
                 string username = this.textBox1.Text;
                 string password = this.textBox2.Text;
                 this.logInManager.AddTeacherUser(username, password);
+            }
 
-                // TODO: Load Teacher UI page.
+            MessageBox.Show("SignUp Success -- Please Log In.");
+            Form1? parForm = this.ParentForm as Form1;
+            LogInPage lip = new LogInPage();
+            if (parForm != null)
+            {
+                parForm.SwitchUserControl(lip);
             }
         }
 
