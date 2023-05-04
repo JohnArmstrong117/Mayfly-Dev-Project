@@ -39,7 +39,10 @@ namespace Mayfly_LogicEngine
         /// <param name="password">Password for new user.</param>
         public void AddStudentUser(string username, string password)
         {
-            Student newStud = new Student(username, password, username);
+            Student newStud = new Student();
+            newStud.UserID = username;
+            newStud.Name = username;
+            newStud.Password = password;
             this.AddUser(newStud);
         }
 
@@ -50,7 +53,10 @@ namespace Mayfly_LogicEngine
         /// <param name="password">Password for new user.</param>
         public void AddTeacherUser(string username, string password)
         {
-            Teacher newTeach = new Teacher(username, password, username);
+            Teacher newTeach = new Teacher();
+            newTeach.UserID = username;
+            newTeach.Name = username;
+            newTeach.Password = password;
             this.AddUser(newTeach);
         }
 
