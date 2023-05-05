@@ -14,12 +14,23 @@ namespace Mayfly_LogicEngine
         private User? activeUser;
         private Quiz? activeQuiz;
         private SchoolClass? activeClass;
+        private LogInManager logInManager;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MayFlyAppManager"/> class.
         /// </summary>
         public MayFlyAppManager()
         {
+            this.logInManager = new LogInManager();
+            this.logInManager.LoadUsers();
+        }
+
+        /// <summary>
+        /// Saves changes to all users.
+        /// </summary>
+        public void SaveAllChanges()
+        {
+            this.logInManager.SaveUsers();
         }
 
         /// <summary>
