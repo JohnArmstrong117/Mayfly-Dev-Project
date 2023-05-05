@@ -11,6 +11,7 @@ namespace Mayfly_LogicEngine
     /// </summary>
     public class MayFlyAppManager
     {
+        private static MayFlyAppManager? instance = null;
         private User? activeUser;
         private Quiz? activeQuiz;
         private SchoolClass? activeClass;
@@ -19,10 +20,24 @@ namespace Mayfly_LogicEngine
         /// <summary>
         /// Initializes a new instance of the <see cref="MayFlyAppManager"/> class.
         /// </summary>
-        public MayFlyAppManager()
+        private MayFlyAppManager()
         {
             this.logInManager = new LogInManager();
             this.logInManager.LoadUsers();
+        }
+
+        /// <summary>
+        /// Gets instance of app manager.
+        /// </summary>
+        /// <returns>instance of app manager.</returns>
+        public static MayFlyAppManager GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MayFlyAppManager();
+            }
+
+            return instance;
         }
 
         /// <summary>
