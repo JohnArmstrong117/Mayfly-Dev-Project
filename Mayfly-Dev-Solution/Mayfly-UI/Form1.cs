@@ -44,6 +44,22 @@ namespace Mayfly_UI
             this.appManager.ActiveUser = newActive;
         }
 
+        /// <summary>
+        /// Adds a new class to the active Teacher.
+        /// </summary>
+        /// <param name="newName">string name of new class.</param>
+        public void AddClassForActiveTeacher(string newName)
+        {
+            Teacher? currentTeacher = this.appManager.ActiveUser as Teacher;
+            if (currentTeacher != null)
+            {
+                SchoolClass newClass = new SchoolClass();
+                newClass.Name = newName;
+                newClass.Teacher = this.appManager.ActiveUser;
+                currentTeacher.AddClass(newClass);
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             foreach (Control c in this.Controls)

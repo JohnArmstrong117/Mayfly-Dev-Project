@@ -30,5 +30,14 @@ namespace Mayfly_LogicEngine
         {
             get { return this.schoolClasses; }
         }
+
+        /// <summary>
+        /// Adds a class to the list.
+        /// </summary>
+        /// <param name="schoolClass">Class to add.</param>
+        public void AddClass(SchoolClass schoolClass)
+        {
+            this.schoolClasses.Add(schoolClass);
+        }
     }
 }
