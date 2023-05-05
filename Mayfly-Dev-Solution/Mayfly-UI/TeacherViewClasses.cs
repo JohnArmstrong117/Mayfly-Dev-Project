@@ -47,9 +47,23 @@ namespace Mayfly_UI
                 classButton.Size = new Size(94, 60);
 
                 this.flowLayoutPanel1.Controls.Add(classButton);
+                classButton.Click += new EventHandler(this.ClassButton_Click);
             }
+
             this.textBox1.Text = string.Empty;
             this.createClassButton.Enabled = false;
+        }
+
+        private void ClassButton_Click(object sender, EventArgs e)
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                Button clicked = (Button)sender;
+                string buttontext = clicked.Text;
+                TeacherClassPage tcp = new TeacherClassPage(buttontext);
+                parForm.SwitchUserControl(tcp);
+            }
         }
 
         private void PopulateClassButtons()
