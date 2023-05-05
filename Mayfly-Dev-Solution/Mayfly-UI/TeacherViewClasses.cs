@@ -21,7 +21,12 @@ namespace Mayfly_UI
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                TeacherHomePage thp = new TeacherHomePage();
+                parForm.SwitchUserControl(thp);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -62,6 +67,7 @@ namespace Mayfly_UI
                 Button clicked = (Button)sender;
                 string buttontext = clicked.Text;
                 TeacherClassPage tcp = new TeacherClassPage(buttontext);
+                parForm.AppManager.ActiveClass = parForm.GetClassFromUserByName(buttontext);
                 parForm.SwitchUserControl(tcp);
             }
         }
