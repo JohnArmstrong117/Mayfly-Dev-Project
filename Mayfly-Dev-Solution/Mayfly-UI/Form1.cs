@@ -41,7 +41,7 @@ namespace Mayfly_UI
         /// <param name="newActive">User to set as active.</param>
         public void SetActiveUser(User newActive)
         {
-            this.appManager.ActiveUser = newActive;
+            MayFlyAppManager.GetInstance().ActiveUser = newActive;
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace Mayfly_UI
         /// <returns>Class if found, null if not.</returns>
         public SchoolClass GetClassFromUserByName(string name)
         {
-            Teacher? currentTeacher = (Teacher)this.appManager.ActiveUser;
+            Teacher? currentTeacher = (Teacher)MayFlyAppManager.GetInstance().ActiveUser;
             if (currentTeacher != null)
             {
                 List<SchoolClass> classes = currentTeacher.SchoolClasses;

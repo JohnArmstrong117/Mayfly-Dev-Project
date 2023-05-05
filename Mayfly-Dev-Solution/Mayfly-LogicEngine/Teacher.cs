@@ -35,7 +35,7 @@ namespace Mayfly_LogicEngine
         /// Adds a class to the list.
         /// </summary>
         /// <param name="schoolClass">Class to add.</param>
-        public void AddClass(SchoolClass schoolClass)
+        public override void AddClass(SchoolClass schoolClass)
         {
             this.schoolClasses.Add(schoolClass);
         }

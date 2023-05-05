@@ -57,5 +57,7 @@ namespace Mayfly_LogicEngine
             get { return this.name; }
             set{ this.name = value; }
         }
+
+        public abstract void AddClass(SchoolClass newClass);
     }
 }

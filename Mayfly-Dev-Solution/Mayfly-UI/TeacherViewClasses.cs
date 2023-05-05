@@ -13,10 +13,14 @@ namespace Mayfly_UI
 {
     public partial class TeacherViewClasses : UserControl
     {
+
+        MayFlyAppManager appManager;
+
         public TeacherViewClasses()
         {
             InitializeComponent();
             this.PopulateClassButtons();
+            this.appManager = MayFlyAppManager.GetInstance();
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -46,7 +50,11 @@ namespace Mayfly_UI
             Form1? parForm = this.ParentForm as Form1;
             if (parForm != null)
             {
-                parForm.AddClassForActiveTeacher(this.textBox1.Text);
+                SchoolClass newClass = new SchoolClass();
+                newClass.Teacher = this.appManager.ActiveUser;
+                newClass.Name = this.textBox1.Text;
+                MayFlyAppManager.GetInstance().ActiveUser.AddClass(newClass);
+                MayFlyAppManager.GetInstance().SaveAllChanges();
                 Button classButton = new Button();
                 classButton.Text = this.textBox1.Text;
                 classButton.Size = new Size(94, 60);
@@ -67,24 +75,21 @@ namespace Mayfly_UI
                 Button clicked = (Button)sender;
                 string buttontext = clicked.Text;
                 TeacherClassPage tcp = new TeacherClassPage(buttontext);
-                parForm.AppManager.ActiveClass = parForm.GetClassFromUserByName(buttontext);
+                MayFlyAppManager.GetInstance().ActiveClass = parForm.GetClassFromUserByName(buttontext);
                 parForm.SwitchUserControl(tcp);
             }
         }
 
         private void PopulateClassButtons()
         {
-            Form1? parForm = this.ParentForm as Form1;
-            if (parForm != null)
+            Teacher cur = (Teacher)MayFlyAppManager.GetInstance().ActiveUser;
+            List<SchoolClass> classes = cur.SchoolClasses;
+            foreach (SchoolClass cls in classes)
             {
-                List<SchoolClass> classes = parForm.GetTeacherClasses();
-                foreach (SchoolClass cls in classes)
-                {
-                    Button classButton = new Button();
-                    classButton.Text = cls.Name;
-                    classButton.Size = new Size(94, 60);
-                    this.flowLayoutPanel1.Controls.Add(classButton);
-                }
+                Button classButton = new Button();
+                classButton.Text = cls.Name;
+                classButton.Size = new Size(94, 60);
+                this.flowLayoutPanel1.Controls.Add(classButton);
             }
         }
 

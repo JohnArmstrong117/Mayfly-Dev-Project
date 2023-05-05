@@ -33,7 +33,6 @@
             textBox1 = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
             label2 = new Label();
-            button1 = new Button();
             createClassButton = new Button();
             SuspendLayout();
             // 
@@ -83,15 +82,6 @@
             label2.TabIndex = 4;
             label2.Text = "To create a class enter\r\na class name in the box\r\nbelow:\r\n";
             // 
-            // button1
-            // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // createClassButton
             // 
             createClassButton.BackColor = Color.FromArgb(192, 255, 192);
@@ -109,7 +99,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             Controls.Add(createClassButton);
-            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(textBox1);
@@ -129,7 +118,6 @@
         private TextBox textBox1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label label2;
-        private Button button1;
         private Button createClassButton;
     }
 }

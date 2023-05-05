@@ -30,5 +30,10 @@ namespace Mayfly_LogicEngine
         {
             get { return this.classes; }
         }
+
+        public override void AddClass(SchoolClass newClass)
+        {
+            this.classes.Add(newClass);
+        }
     }
 }

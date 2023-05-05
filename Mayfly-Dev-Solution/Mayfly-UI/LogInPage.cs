@@ -14,6 +14,7 @@ namespace Mayfly_UI
     public partial class LogInPage : UserControl
     {
         private LogInManager logInManager;
+        private MayFlyAppManager appManager;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LogInPage"/> class.
@@ -22,6 +23,7 @@ namespace Mayfly_UI
         {
             InitializeComponent();
             this.logInManager = new LogInManager();
+            appManager = MayFlyAppManager.GetInstance();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,7 +52,7 @@ namespace Mayfly_UI
                             Form1? parForm = this.ParentForm as Form1;
                             if (parForm != null)
                             {
-                                parForm.SetActiveUser(foundUser);
+                                this.appManager.ActiveUser = foundUser;
                                 TeacherHomePage teacherHomePage = new TeacherHomePage();
                                 parForm.SwitchUserControl(teacherHomePage);
                             }
@@ -64,7 +66,7 @@ namespace Mayfly_UI
                             Form1? parForm = this.ParentForm as Form1;
                             if (parForm != null)
                             {
-                                parForm.SetActiveUser(foundUser);
+                                this.appManager.ActiveUser = foundUser;
                                 StudentHomePage studentHomePage = new StudentHomePage();
                                 parForm.SwitchUserControl(studentHomePage);
                             }
