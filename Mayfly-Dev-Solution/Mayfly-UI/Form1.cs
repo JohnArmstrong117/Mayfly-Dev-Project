@@ -57,7 +57,46 @@ namespace Mayfly_UI
                 newClass.Name = newName;
                 newClass.Teacher = this.appManager.ActiveUser;
                 currentTeacher.AddClass(newClass);
+                this.appManager.SaveAllChanges();
             }
+        }
+
+        /// <summary>
+        /// Gets a class using a name from the active user.
+        /// </summary>
+        /// <param name="name">Name of the class to be found.</param>
+        /// <returns>Class if found, null if not.</returns>
+        public SchoolClass GetClassFromUserByName(string name)
+        {
+            Teacher? currentTeacher = (Teacher)this.appManager.ActiveUser;
+            if (currentTeacher != null)
+            {
+                List<SchoolClass> classes = currentTeacher.SchoolClasses;
+                foreach (SchoolClass c in classes)
+                {
+                    if (c.Name == name)
+                    {
+                        return c;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Returns active teachers classes.
+        /// </summary>
+        /// <returns>active teachers classes.</returns>
+        public List<SchoolClass> GetTeacherClasses()
+        {
+            if (this.appManager.ActiveUser != null)
+            {
+                Teacher currTeach = (Teacher)this.appManager.ActiveUser;
+                return currTeach.SchoolClasses;
+            }
+
+            return null;
         }
 
         private void Form1_Load(object sender, EventArgs e)

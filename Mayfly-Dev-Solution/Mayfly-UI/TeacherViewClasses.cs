@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Mayfly_LogicEngine;
 
 namespace Mayfly_UI
 {
@@ -15,6 +16,7 @@ namespace Mayfly_UI
         public TeacherViewClasses()
         {
             InitializeComponent();
+            this.PopulateClassButtons();
         }
 
         private void homeButton_Click(object sender, EventArgs e)
@@ -48,6 +50,22 @@ namespace Mayfly_UI
             }
             this.textBox1.Text = string.Empty;
             this.createClassButton.Enabled = false;
+        }
+
+        private void PopulateClassButtons()
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                List<SchoolClass> classes = parForm.GetTeacherClasses();
+                foreach (SchoolClass cls in classes)
+                {
+                    Button classButton = new Button();
+                    classButton.Text = cls.Name;
+                    classButton.Size = new Size(94, 60);
+                    this.flowLayoutPanel1.Controls.Add(classButton);
+                }
+            }
         }
 
         private void TeacherViewClasses_Load(object sender, EventArgs e)
