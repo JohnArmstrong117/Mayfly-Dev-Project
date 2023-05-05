@@ -9,7 +9,7 @@ namespace Mayfly_UI
         public Form1()
         {
             InitializeComponent();
-            this.AppManager = new MayFlyAppManager();
+            this.AppManager = MayFlyAppManager.GetInstance();
         }
 
         /// <summary>
