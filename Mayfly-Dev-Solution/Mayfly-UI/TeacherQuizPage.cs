@@ -37,6 +37,7 @@ namespace Mayfly_UI
 
         private void homeButton_Click(object sender, EventArgs e)
         {
+            MayFlyAppManager.GetInstance().ActiveClass.QuizList.Add(this.thisQuiz);
             Form1? parForm = this.ParentForm as Form1;
             if (parForm != null)
             {
@@ -95,6 +96,7 @@ namespace Mayfly_UI
             {
                 cInd = 3;
             }
+
             Question newQuestion = new Question();
             newQuestion.QuestionText = qText;
             newQuestion.AnswerText = astrings;
@@ -113,7 +115,12 @@ namespace Mayfly_UI
 
         private void viewQuestionsButton_Click(object sender, EventArgs e)
         {
-
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                TeacherQuestionView tqw = new TeacherQuestionView(this.thisQuiz);
+                parForm.SwitchUserControl(tqw);
+            }
         }
 
         private void CheckValidAddQuiz()
