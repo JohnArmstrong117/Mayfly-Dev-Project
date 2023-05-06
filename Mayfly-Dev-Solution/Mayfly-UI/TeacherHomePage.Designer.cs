@@ -92,6 +92,7 @@
             signOutButton.TabIndex = 4;
             signOutButton.Text = "Sign Out";
             signOutButton.UseVisualStyleBackColor = false;
+            signOutButton.Click += signOutButton_Click;
             // 
             // TeacherHomePage
             // 

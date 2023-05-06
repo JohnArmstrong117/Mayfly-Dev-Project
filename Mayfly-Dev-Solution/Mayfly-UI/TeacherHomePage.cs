@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mayfly_LogicEngine;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,19 @@ namespace Mayfly_UI
             {
                 TeacherViewClasses tvc = new TeacherViewClasses();
                 parForm.SwitchUserControl(tvc);
+            }
+        }
+
+        private void signOutButton_Click(object sender, EventArgs e)
+        {
+            Form1? parForm = this.ParentForm as Form1;
+            if (parForm != null)
+            {
+                LaunchPage lp = new LaunchPage();
+                MayFlyAppManager.GetInstance().ActiveClass = null;
+                MayFlyAppManager.GetInstance().ActiveQuiz = null;
+                MayFlyAppManager.GetInstance().ActiveUser = null;
+                parForm.SwitchUserControl(lp);
             }
         }
     }
