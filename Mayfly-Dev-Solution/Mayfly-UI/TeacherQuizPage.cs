@@ -72,7 +72,43 @@ namespace Mayfly_UI
 
         private void addQuestionButton_Click(object sender, EventArgs e)
         {
-
+            string qText = this.textBox1.Text;
+            string[] astrings = new string[4];
+            astrings[0] = this.textBox2.Text;
+            astrings[1] = this.textBox3.Text;
+            astrings[2] = this.textBox4.Text;
+            astrings[3] = this.textBox5.Text;
+            int cInd = -1;
+            if (this.radioButton1.Checked)
+            {
+                cInd = 0;
+            }
+            else if (this.radioButton2.Checked)
+            {
+                cInd = 1;
+            }
+            else if (this.radioButton3.Checked)
+            {
+                cInd = 2;
+            }
+            else if (this.radioButton4.Checked)
+            {
+                cInd = 3;
+            }
+            Question newQuestion = new Question();
+            newQuestion.QuestionText = qText;
+            newQuestion.AnswerText = astrings;
+            newQuestion.CorrectIndex = cInd;
+            this.thisQuiz.AddQuestion(newQuestion);
+            this.textBox1.Text = string.Empty;
+            this.textBox2.Text = string.Empty;
+            this.textBox3.Text = string.Empty;
+            this.textBox4.Text = string.Empty;
+            this.textBox5.Text = string.Empty;
+            this.radioButton1.Checked = false;
+            this.radioButton2.Checked = false;
+            this.radioButton3.Checked = false;
+            this.radioButton4.Checked = false;
         }
 
         private void viewQuestionsButton_Click(object sender, EventArgs e)
